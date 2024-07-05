@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  luan-autenciacao-db:
+    image: postgres
+    container_name: luan-autenciacao-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=autenticacao_db
+      - PGDATA=/data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
